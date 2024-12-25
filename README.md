@@ -49,6 +49,29 @@ Join our community of developers creating universal apps.
 - [Expo on GitHub](https://github.com/expo/expo): View our open source platform and contribute.
 - [Discord community](https://chat.expo.dev): Chat with Expo users and ask questions.
 
-
 ## Reseting the Project
+
 npm run reset-project
+
+## to create new page
+
+create a .tsx file and use **rnfe** snippet to create a new export file
+
+```bash
+
+import { View, Text } from "react-native";
+import React from "react";
+
+const SignIn = () => {
+  return (
+    <View>
+      <Text>SignIn</Text>
+    </View>
+  );
+};
+
+export default SignIn;
+
+
+
+```
