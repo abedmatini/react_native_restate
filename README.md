@@ -55,10 +55,9 @@ npm run reset-project
 
 ## to create new page
 
-create a .tsx file and use **rnfe** snippet to create a new export file
+create a sign-in.tsx file and use **rnfe** snippet to create a new export file
 
 ```bash
-
 import { View, Text } from "react-native";
 import React from "react";
 
@@ -71,7 +70,52 @@ const SignIn = () => {
 };
 
 export default SignIn;
+```
 
+## Tabs are inside the (tabs) directory inside the (root) directory
 
+- static pages can be initiated with **rnfe** like the sign-in.tsx
+- dynamic pages with **rnfe** and useLocalSearchParams()
+  const { id } = useLocalSearchParams(); // extract the id from routing parameters
 
+```bash
+import { View, Text } from "react-native";
+import React from "react";
+import { useLocalSearchParams } from "expo-router";
+
+const Property = () => {
+  const { id } = useLocalSearchParams(); // extract the id from routing parameters
+  return (
+    <View>
+      <Text>Property {id}</Text>
+    </View>
+  );
+};
+
+export default Property;
+
+```
+
+## Page Structure
+
+- app
+  -- (root)
+  --- (tabs)
+  ---- indes.tsx
+  ---- profile.tsx
+  ---- explore.tsx
+
+--- (properties)
+---- [id].tsx
+
+-- \_layout.tsx
+-- sign-in.tsx
+
+## link structure in index.tsx
+
+```bash
+      <Link href="/sign-in">Sign In</Link>
+      <Link href="/explore">Explore</Link>
+      <Link href="/profile">Profile</Link>
+      <Link href="/properties/1">Property</Link>
 ```
