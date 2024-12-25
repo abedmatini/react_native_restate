@@ -98,6 +98,7 @@ export default Property;
 
 ## Page Structure
 
+```bash
 - app
   -- (root)
   --- (tabs)
@@ -110,6 +111,7 @@ export default Property;
 
 -- \_layout.tsx
 -- sign-in.tsx
+```
 
 ## link structure in index.tsx
 
@@ -119,3 +121,21 @@ export default Property;
       <Link href="/profile">Profile</Link>
       <Link href="/properties/1">Property</Link>
 ```
+
+## instaling NativeWind
+
+https://www.nativewind.dev/getting-started/expo-router
+
+After following the steps, make sure
+
+- **components** added to the tailwind.config.js
+
+content: ["./app/**/*.{js,jsx,ts,tsx}", "./components/**/*.{js,jsx,ts,tsx}"],
+
+- global.css is correctly rooted inside the metro.config.js
+  module.exports = withNativeWind(config, { input: "./app/global.css" });
+
+- global.css is imported correctly insie the \_layout.tsx
+  import "./global.css";
+
+- ** STOP the expo and run the npx expo start again. ** otherwise it won't work
