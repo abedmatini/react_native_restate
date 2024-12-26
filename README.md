@@ -138,4 +138,37 @@ content: ["./app/**/*.{js,jsx,ts,tsx}", "./components/**/*.{js,jsx,ts,tsx}"],
 - global.css is imported correctly insie the \_layout.tsx
   import "./global.css";
 
-- ** STOP the expo and run the npx expo start again. ** otherwise it won't work
+- **STOP the expo and run the npx expo start again.** otherwise it won't work
+
+## importing assets and constatns
+
+- import fonts into app.json under Plugins
+
+```bash
+      [
+        "expo-font",
+        {
+          "fonts": [
+
+              "./assets/fonts/Rubik-Bold.ttf",
+              "./assets/fonts/Rubik-ExtraBold.ttf",
+              "./assets/fonts/Rubik-Light.ttf",
+              "./assets/fonts/Rubik-Medium.ttf",
+              "./assets/fonts/Rubik-Regular.ttf",
+              "./assets/fonts/Rubik-SemiBold.ttf"
+                      ]
+        }
+      ]
+```
+
+- alter miner changes in expo-splash-screen as well
+
+```bash
+        "expo-splash-screen",
+        {
+          "image": "./assets/images/splash-icon.png",
+          "resizeMode": "cover",
+          "backgroundColor": "#ffffff",
+          "enableFullScreenImage_legacy": true
+        }
+```
