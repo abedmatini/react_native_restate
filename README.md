@@ -206,3 +206,12 @@ content: ["./app/**/*.{js,jsx,ts,tsx}", "./components/**/*.{js,jsx,ts,tsx}"],
           "enableFullScreenImage_legacy": true
         }
 ```
+
+- create a fild called image.d.ts to declare the image types as this exmpale
+
+```bash
+declare module "*.jpg" {
+    const value: any;
+    export default value;
+} // meaning exporting differnt types of JPGs and that is okay
+```
