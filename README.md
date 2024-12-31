@@ -215,3 +215,10 @@ declare module "*.jpg" {
     export default value;
 } // meaning exporting differnt types of JPGs and that is okay
 ```
+
+## add .env.local file
+
+```bash
+EXPO_PUBLIC_APPWRITE_PROJECT_ID= add project id here from https://cloud.appwrite.io/
+EXPO_PUBLIC_APPWRITE_ENDPOINT=https://cloud.appwrite.io/v1
+```
