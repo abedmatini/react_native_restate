@@ -15,10 +15,8 @@ interface UseAppwriteReturn<T, P> {
 }
 
 export const useAppwrite = <T, P extends Record<string, string | number>>({
-  fn,
-  params = {} as P,
-  skip = false,
-}: UseAppwriteOptions<T, P>): UseAppwriteReturn<T, P> => {
+    fn, params = {} as P, skip = false,
+}: UseAppwriteOptions<T, P>, p0: { fn: any; }): UseAppwriteReturn<T, P> => {
   const [data, setData] = useState<T | null>(null);
   const [loading, setLoading] = useState(!skip);
   const [error, setError] = useState<string | null>(null);
